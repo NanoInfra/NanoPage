@@ -2,8 +2,8 @@
   "name": "TEMPLATE",
   "exports": "./page.tsx",
   "tasks": {
-    "dev:client": "deno bundle --watch ./client.tsx -o ./dist/TEMPLATE/main.js",
-    "dev:server": "deno run --env-file=.env.dev --allow-all --watch ./server.tsx"
+    "dev:client": "deno run --allow-all ./scripts/dev-client.ts",
+    "dev:server": "deno run --allow-all ./scripts/dev-server.ts"
   },
   "imports": {
     "@/": "./",
@@ -76,18 +76,11 @@
     "tailwind-merge": "https://esm.sh/tailwind-merge",
     "next-themes": "https://esm.sh/next-themes"
   },
-  "unstable": [
-    "byonm",
-    "node-globals",
-    "sloppy-imports",
-    "raw-imports"
-  ],
+  "unstable": ["byonm", "node-globals", "sloppy-imports", "raw-imports"],
   "lint": {
     "rules": {
       "tags": ["recommended"],
-      "exclude": [
-        "no-sloppy-imports"
-      ]
+      "exclude": ["no-sloppy-imports"]
     }
   },
   "fmt": {
@@ -100,13 +93,12 @@
   },
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "lib": ["esnext", "dom", "deno.ns"]
   },
   "scopes": {
     "https://esm.sh": {
       "node:process": "data:application/javascript,export default { env: { NODE_ENV: 'production' } };"
-    },
-    "https://esm.sh/@radix-ui/": {
     }
   }
 }

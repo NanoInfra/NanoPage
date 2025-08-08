@@ -6,19 +6,23 @@ import inline from "@twind/with-react/inline";
 import tw from "./tw.ts";
 
 // to read local deno.json
-import { baseURL } from "./service.ts";
+import service, { baseURL } from "./service.ts";
 
 // source deps
 import AppRouter from "./router.tsx";
 
+const dev = Deno.env.get("DEV") === "true";
+
+interface RenderHTMLProps {
+  reqPath: string;
+  search: string;
+  lang: string;
+  body: string;
+  title?: string;
+}
+
 export default function RenderHTML(
-  { reqPath, search, lang, body, title }: {
-    reqPath: string;
-    search: string;
-    lang: string;
-    body: string;
-    title?: string;
-  },
+  { reqPath, search, lang, body, title }: RenderHTMLProps,
 ) {
   return `
   <!DOCTYPE html>
@@ -29,6 +33,7 @@ export default function RenderHTML(
          globalThis.SSR_PATH = "${reqPath}";
          globalThis.SSR_SEARCH = "${search}";
          globalThis.SSR_LANG = "${lang}";
+         globalThis.DEV = ${dev};
         </script>
       </head>
 
@@ -40,7 +45,7 @@ export default function RenderHTML(
   </html>`;
 }
 
-if (Deno.env.get("DEV")) {
+if (dev) {
   console.log("Running in development mode");
 }
 
@@ -55,10 +60,10 @@ app.use(
     fallbackLanguage: "en", // 必需
   }),
 );
-if (Deno.env.get("DEV")) {
+if (dev) {
   app.get(`${baseURL}/dist/*`, (c: Context, n) => {
     const filePath = c.req.path.replace(`${baseURL}/dist/`, "");
-    return serveStatic({ root: "./dist/TEMPLATE", path: filePath })(c, n);
+    return serveStatic({ root: `./dist/${service.name}`, path: filePath })(c, n);
   });
 }
 app.get(`${baseURL}/*`, (c: Context) => {
