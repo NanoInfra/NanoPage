@@ -1,0 +1,10 @@
+{
+  "name": "TEMPLATE",
+  "jwt_check": false,
+  "permissions": {
+    "read": [],
+    "write": [],
+    "env": [],
+    "run": []
+  }
+}
