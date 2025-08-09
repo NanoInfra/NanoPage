@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-all ./packages/cli/mod.ts -C ./examples/shadcn"
+  },
+  "imports": {
+    "@cliffy/command": "jsr:@cliffy/command@^1.0.0-rc.8"
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  }
+}
