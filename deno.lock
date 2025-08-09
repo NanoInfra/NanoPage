@@ -2,7 +2,6 @@
   "version": "5",
   "specifiers": {
     "npm:@types/node@*": "22.15.15",
-    "npm:@unhead/react@^2.0.14": "2.0.14_react@19.1.1",
     "npm:hono@*": "4.8.5"
   },
   "npm": {
@@ -12,30 +11,11 @@
         "undici-types"
       ]
     },
-    "@unhead/react@2.0.14_react@19.1.1": {
-      "integrity": "sha512-LHIhXyJUztRO5kFAXO4SG3RB0a/Uz3zMrX/LHo0Wp2z0KQ4jXq2dLSpM3Jxjrjm5eLO4tTvOGhU65EBgj/4ZFg==",
-      "dependencies": [
-        "react",
-        "unhead"
-      ]
-    },
     "hono@4.8.5": {
       "integrity": "sha512-Up2cQbtNz1s111qpnnECdTGqSIUIhZJMLikdKkshebQSEBcoUKq6XJayLGqSZWidiH0zfHRCJqFu062Mz5UuRA=="
     },
-    "hookable@5.5.3": {
-      "integrity": "sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ=="
-    },
-    "react@19.1.1": {
-      "integrity": "sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ=="
-    },
     "undici-types@6.21.0": {
       "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
-    },
-    "unhead@2.0.14": {
-      "integrity": "sha512-dRP6OCqtShhMVZQe1F4wdt/WsYl2MskxKK+cvfSo0lQnrPJ4oAUQEkxRg7pPP+vJENabhlir31HwAyHUv7wfMg==",
-      "dependencies": [
-        "hookable"
-      ]
     }
   },
   "redirects": {
@@ -81,6 +61,7 @@
     "https://esm.sh/@types/d3-shape@~3.1.7/index.d.ts": "https://esm.sh/@types/d3-shape@3.1.7/index.d.ts",
     "https://esm.sh/@types/d3-time-format@~4.0.3/index.d.ts": "https://esm.sh/@types/d3-time-format@4.0.3/index.d.ts",
     "https://esm.sh/@types/d3-time@~3.0.4/index.d.ts": "https://esm.sh/@types/d3-time@3.0.4/index.d.ts",
+    "https://esm.sh/@types/invariant@~2.2.37/index.d.ts": "https://esm.sh/@types/invariant@2.2.37/index.d.ts",
     "https://esm.sh/@types/lodash@~4.17.14/every.d.ts": "https://esm.sh/@types/lodash@4.17.20/every.d.ts",
     "https://esm.sh/@types/lodash@~4.17.14/find.d.ts": "https://esm.sh/@types/lodash@4.17.20/find.d.ts",
     "https://esm.sh/@types/lodash@~4.17.14/first.d.ts": "https://esm.sh/@types/lodash@4.17.20/first.d.ts",
@@ -117,6 +98,8 @@
     "https://esm.sh/@types/react-dom@~19.1.6/server.d.ts": "https://esm.sh/@types/react-dom@19.1.7/server.d.ts",
     "https://esm.sh/@types/react-is@~18.3.1/index.d.ts": "https://esm.sh/@types/react-is@18.3.1/index.d.ts",
     "https://esm.sh/@types/react-transition-group@~4.4.12/index.d.ts": "https://esm.sh/@types/react-transition-group@4.4.12/index.d.ts",
+    "https://esm.sh/@types/react@~18.3.18/index.d.ts": "https://esm.sh/@types/react@18.3.23/index.d.ts",
+    "https://esm.sh/@types/react@~18.3.23/index.d.ts": "https://esm.sh/@types/react@18.3.23/index.d.ts",
     "https://esm.sh/@types/react@~19.0.7/index.d.ts": "https://esm.sh/@types/react@19.0.14/index.d.ts",
     "https://esm.sh/@types/react@~19.0.8/index.d.ts": "https://esm.sh/@types/react@19.0.14/index.d.ts",
     "https://esm.sh/@types/react@~19.1.0/index.d.ts": "https://esm.sh/@types/react@19.1.9/index.d.ts",
@@ -124,6 +107,7 @@
     "https://esm.sh/@types/react@~19.1.8/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.1.9/jsx-runtime.d.ts",
     "https://esm.sh/@types/react@~19.1.9/index.d.ts": "https://esm.sh/@types/react@19.1.9/index.d.ts",
     "https://esm.sh/@types/react@~19.1.9/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.1.9/jsx-runtime.d.ts",
+    "https://esm.sh/@types/shallowequal@~1.1.5/index.d.ts": "https://esm.sh/@types/shallowequal@1.1.5/index.d.ts",
     "https://esm.sh/@types/use-sync-external-store@~1.5.0/shim/index.d.ts": "https://esm.sh/@types/use-sync-external-store@1.5.0/shim/index.d.ts",
     "https://esm.sh/aria-hidden@^1.2.4?target=denonext": "https://esm.sh/aria-hidden@1.2.6?target=denonext",
     "https://esm.sh/clsx@^2.0.0?target=denonext": "https://esm.sh/clsx@2.1.1?target=denonext",
@@ -152,6 +136,7 @@
     "https://esm.sh/hono/language": "https://esm.sh/hono@4.8.10/language",
     "https://esm.sh/hono@^4/utils/mime?target=denonext": "https://esm.sh/hono@4.8.12/utils/mime?target=denonext",
     "https://esm.sh/internmap@^2.0.3?target=denonext": "https://esm.sh/internmap@2.0.3?target=denonext",
+    "https://esm.sh/invariant@^2.2.4?target=denonext": "https://esm.sh/invariant@2.2.4?target=denonext",
     "https://esm.sh/lodash@^4.17.21/every?target=denonext": "https://esm.sh/lodash@4.17.21/every?target=denonext",
     "https://esm.sh/lodash@^4.17.21/find?target=denonext": "https://esm.sh/lodash@4.17.21/find?target=denonext",
     "https://esm.sh/lodash@^4.17.21/first?target=denonext": "https://esm.sh/lodash@4.17.21/first?target=denonext",
@@ -193,6 +178,7 @@
     "https://esm.sh/preact@^10.26.9/hooks?target=denonext": "https://esm.sh/preact@10.26.9/hooks?target=denonext",
     "https://esm.sh/preact@^10.26.9?target=denonext": "https://esm.sh/preact@10.26.9?target=denonext",
     "https://esm.sh/prop-types@^15.6.2?target=denonext": "https://esm.sh/prop-types@15.8.1?target=denonext",
+    "https://esm.sh/prop-types@^15.7.2?target=denonext": "https://esm.sh/prop-types@15.8.1?target=denonext",
     "https://esm.sh/prop-types@^15.8.1?target=denonext": "https://esm.sh/prop-types@15.8.1?target=denonext",
     "https://esm.sh/react": "https://esm.sh/react@19.1.1",
     "https://esm.sh/react-dom": "https://esm.sh/react-dom@19.1.1",
@@ -205,6 +191,8 @@
     "https://esm.sh/react-dom@^19.2.0-canary-f9ae0a4c-20250527?alias=react:preact/compat&target=denonext": "https://esm.sh/react-dom@19.2.0-canary-fa3feba6-20250623?alias=react:preact/compat&target=denonext",
     "https://esm.sh/react-dom@^19.2.0-canary-f9ae0a4c-20250527?target=denonext": "https://esm.sh/react-dom@19.2.0-canary-fa3feba6-20250623?target=denonext",
     "https://esm.sh/react-dom@^19.2.0-canary-fa3feba6-20250623?target=denonext": "https://esm.sh/react-dom@19.2.0-canary-fa3feba6-20250623?target=denonext",
+    "https://esm.sh/react-fast-compare@^3.2.0?target=denonext": "https://esm.sh/react-fast-compare@3.2.2?target=denonext",
+    "https://esm.sh/react-fast-compare@^3.2.2?target=denonext": "https://esm.sh/react-fast-compare@3.2.2?target=denonext",
     "https://esm.sh/react-is@^18.3.1?target=denonext": "https://esm.sh/react-is@18.3.1?target=denonext",
     "https://esm.sh/react-remove-scroll-bar@^2.3.7/constants?alias=react:preact/compat&target=denonext": "https://esm.sh/react-remove-scroll-bar@2.3.8/constants?alias=react:preact/compat&target=denonext",
     "https://esm.sh/react-remove-scroll-bar@^2.3.7/constants?target=denonext": "https://esm.sh/react-remove-scroll-bar@2.3.8/constants?target=denonext",
@@ -221,6 +209,7 @@
     "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.1.1/jsx-runtime",
     "https://esm.sh/react@%3E=16.6.0?target=denonext": "https://esm.sh/react@19.1.1?target=denonext",
     "https://esm.sh/react@%3E=16.8.0?target=denonext": "https://esm.sh/react@19.1.1?target=denonext",
+    "https://esm.sh/react@^18.3.1?target=denonext": "https://esm.sh/react@18.3.1?target=denonext",
     "https://esm.sh/react@^19.0.0/jsx-runtime?target=denonext": "https://esm.sh/react@19.1.1/jsx-runtime?target=denonext",
     "https://esm.sh/react@^19.0.0?target=denonext": "https://esm.sh/react@19.1.1?target=denonext",
     "https://esm.sh/react@^19.1.0-canary-fc8a898d-20241226/jsx-runtime?target=denonext": "https://esm.sh/react@19.2.0-canary-fa3feba6-20250623/jsx-runtime?target=denonext",
@@ -239,6 +228,7 @@
     "https://esm.sh/recharts-scale@^0.4.4?target=denonext": "https://esm.sh/recharts-scale@0.4.5?target=denonext",
     "https://esm.sh/regexparam@^3.0.0?target=denonext": "https://esm.sh/regexparam@3.0.0?target=denonext",
     "https://esm.sh/scheduler@^0.26.0?target=denonext": "https://esm.sh/scheduler@0.26.0?target=denonext",
+    "https://esm.sh/shallowequal@^1.1.0?target=denonext": "https://esm.sh/shallowequal@1.1.0?target=denonext",
     "https://esm.sh/style-vendorizer@^2.2.3?target=denonext": "https://esm.sh/style-vendorizer@2.2.3?target=denonext",
     "https://esm.sh/tailwind-merge": "https://esm.sh/tailwind-merge@3.3.1",
     "https://esm.sh/tiny-invariant@^1.3.1?target=denonext": "https://esm.sh/tiny-invariant@1.3.3?target=denonext",
@@ -822,6 +812,8 @@
     "https://esm.sh/input-otp@1.4.2/denonext/input-otp.mjs": "f5ff1c0cbdd756ae539f07e84beb5e6f5009515d4f35b00aeccf83f892eb5f93",
     "https://esm.sh/internmap@2.0.3/denonext/internmap.mjs": "09707265c3a24383ca1b71aa6d97ab980e91ad4e804f55dec34de6d24a9900b4",
     "https://esm.sh/internmap@2.0.3?target=denonext": "235fe2491d38df4060d092e8b8e882891b7bcb595435dcf9f52d7d38b6d2c534",
+    "https://esm.sh/invariant@2.2.4/denonext/invariant.mjs": "000dfb42b3ee0cd63f560f16a2266b0cd7523e484787ea3e39db8bf545c28945",
+    "https://esm.sh/invariant@2.2.4?target=denonext": "d5e5e3325b1c06dfb67098d8080bfb9f0697405d25543b51a590ff392c80278c",
     "https://esm.sh/lodash@4.17.21/denonext/every.mjs": "6b18051b407f86bada8e77c377ea885c25bf99ac6526a02aae07f5bec7fc9bc1",
     "https://esm.sh/lodash@4.17.21/denonext/find.mjs": "b0388882b8b3e3d73b413b831758f8e1964fce7d88145bf593762bb556326e18",
     "https://esm.sh/lodash@4.17.21/denonext/first.mjs": "9b2636c18ece3f378952d6b814d75a0384ccc4beba13930575e7bde87f9f04f2",
@@ -923,6 +915,12 @@
     "https://esm.sh/react-dom@19.2.0-canary-fa3feba6-20250623/denonext/react-dom.mjs": "2dcdc0d3f3d55df45850614f55941fab9624b007b33a25c77ce41c2cd2ee20ef",
     "https://esm.sh/react-dom@19.2.0-canary-fa3feba6-20250623?alias=react:preact/compat&target=denonext": "94ab4a0068a77b2f27b424a56cb729d4f95696930f2381167d164c7dbca599ed",
     "https://esm.sh/react-dom@19.2.0-canary-fa3feba6-20250623?target=denonext": "cedcfea51a99a5c1eaac9d3e7522bef65d7c37176f0b10ccf2af934149f82b07",
+    "https://esm.sh/react-fast-compare@3.2.2/denonext/react-fast-compare.mjs": "76a4164848e0eda0fa1bfdd4f000130de8b4a9f31b2217abfc156f494b324ddf",
+    "https://esm.sh/react-fast-compare@3.2.2?target=denonext": "48e21bd5a837d4297eb4a2f1a3c7a575b5a3e3996f768789c4cbccb6ee5ab718",
+    "https://esm.sh/react-helmet-async@1.3.0": "ee88f717d725966bf8e75d0bca014a081d4b8b02e033375cdbf4388cc737d619",
+    "https://esm.sh/react-helmet-async@1.3.0/denonext/react-helmet-async.mjs": "0927330177869d0b1966579a2f796b72cb1ec00c3d4125c83ababa2c126357e2",
+    "https://esm.sh/react-helmet-async@2.0.5": "55ba9c91a169ded55dd28b21a6dc833175ef5aacc1136e8204a80685f4606dcf",
+    "https://esm.sh/react-helmet-async@2.0.5/denonext/react-helmet-async.mjs": "2d0893274967df9bfbbdbbc019da92751ea388b81ffa5b5ec4e21940667f5b44",
     "https://esm.sh/react-hook-form@7.62.0": "d0d827780b0578131c8d08b2c03f16a2310abfe664ee63a98ff74914f75449ec",
     "https://esm.sh/react-hook-form@7.62.0/denonext/react-hook-form.mjs": "3d4fc396693231c8b70581ce0a00005d25f5a228e870fa549b68f69af27a6f15",
     "https://esm.sh/react-is@18.3.1/denonext/react-is.mjs": "c1d5a0a6fe1fa91e11156a3141f231ef9fd5c344a0822d1f7558ebd77a06c405",
@@ -963,6 +961,8 @@
     "https://esm.sh/react-style-singleton@2.2.3?target=denonext": "e33fd50ca3ceea1d1bfb4f0f0102c73c59561865772a4c44b2cacf41da958240",
     "https://esm.sh/react-transition-group@4.4.5/denonext/react-transition-group.mjs": "20ded46fbaf1b83ceb79d87f8d3985127fc4049ec362d3926fba92c81d6ff991",
     "https://esm.sh/react-transition-group@4.4.5?target=denonext": "c0602ef43a00c251f4965415088720fb623e0b10d9d41ca63ffa0af01dd28325",
+    "https://esm.sh/react@18.3.1/denonext/react.mjs": "fec8d5ab4ffa55c8b563abc31060c3dc0205699aff20beec4aba0311efdcc1a0",
+    "https://esm.sh/react@18.3.1?target=denonext": "336090fd1f03fdb9530dce4ac761717b5e1e1a630c775bac184ec4ee0809cf89",
     "https://esm.sh/react@19.1.1": "4583aedf2a721df5ea4aa7308de82b5bcbee12e5ed7910061940f7434982847d",
     "https://esm.sh/react@19.1.1/denonext/jsx-runtime.mjs": "725c2f07b0ae1b880a8e091b569a7baff43d5560cddb7fe51a64c94463eec496",
     "https://esm.sh/react@19.1.1/denonext/react.mjs": "588ff2562af9e974efdb79cc945049768bf5ee0252543fd8fb6a48472f3db587",
@@ -981,6 +981,8 @@
     "https://esm.sh/regexparam@3.0.0?target=denonext": "7872307e3b552c622d2da8f5fbdb86987254c65b029eec3b17cfffa6eaf92661",
     "https://esm.sh/scheduler@0.26.0/denonext/scheduler.mjs": "b62267951094a7c42b7170c51e31f57198981b08ebfae60be0d076101a4c6f91",
     "https://esm.sh/scheduler@0.26.0?target=denonext": "102f3b685ea5271452bd93de89ab0d99668aecb08f7706e3b9c6629699dd92e0",
+    "https://esm.sh/shallowequal@1.1.0/denonext/shallowequal.mjs": "172d8034693cbfc351e3bcc6a7f1887600a11e954a8c748994fd4ea3e27f5cc9",
+    "https://esm.sh/shallowequal@1.1.0?target=denonext": "07e773eb08a8dac1aeca90c8d0d24bad659cc10421933491f9b1ba21865376fd",
     "https://esm.sh/sonner@2.0.7": "b86768543de7ffc51686b9943a520b72d7ab4abc354f72466cf224c431299717",
     "https://esm.sh/sonner@2.0.7/denonext/sonner.mjs": "dd6cf0825ea68f00c27f9b95dd9e210110163292f93cfd81e818f88ec5690a52",
     "https://esm.sh/style-vendorizer@2.2.3/denonext/style-vendorizer.mjs": "5201bd4a17899690af07a1f1d1de8504fb6ed401e3bd7fca4ce76598c2b3f4e6",
@@ -1034,7 +1036,6 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@unhead/react@^2.0.14",
       "npm:hono@*"
     ]
   }

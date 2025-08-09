@@ -1,7 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 
-const MyContainer = (
+const Container = (
   { children, left, ...props }: React.HTMLAttributes<HTMLDivElement> & {
     left: React.ReactNode;
   },
@@ -24,7 +25,7 @@ const MyContainer = (
   );
 };
 
-export const MyPage: React.FC = () => {
+export default function MyPage() {
   const [currentTime, setCurrentTime] = React.useState(new Date());
 
   React.useEffect(() => {
@@ -35,9 +36,13 @@ export const MyPage: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <MyContainer left={<div>Left Content</div>}>
+    <Container left={<div>Left Content</div>}>
+      <Helmet>
+        <title>NanoPage</title>
+        <meta name="description" content="NanoPage demo" />
+      </Helmet>
       <h1>Hello, World!</h1>
       <p>Current time: {currentTime.toLocaleTimeString()}</p>
-    </MyContainer>
+    </Container>
   );
-};
+}

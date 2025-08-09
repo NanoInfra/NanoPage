@@ -4,6 +4,7 @@ import { languageDetector } from "hono/language";
 import { serveStatic } from "hono/deno";
 import inline from "@twind/with-react/inline";
 import tw from "./tw.ts";
+import { prerenderHead } from "./head.tsx";
 
 // to read local deno.json
 import service, { baseURL } from "./service.ts";
@@ -26,10 +27,11 @@ export default function RenderHTML(
 ) {
   return `
   <!DOCTYPE html>
-  <html>
-      <head>
-        <title>${title ? title : reqPath}</title>
-        <script lang="javascript">
+      <html>
+          <head>
+            <title>${title ? title : reqPath}</title>
+            ${prerenderHead()}
+            <script lang="javascript">
          globalThis.SSR_PATH = "${reqPath}";
          globalThis.SSR_SEARCH = "${search}";
          globalThis.SSR_LANG = "${lang}";
@@ -40,7 +42,6 @@ export default function RenderHTML(
       <body>
         <div id="app">${body}</div>
         <script type="module" src="${baseURL}/dist/main.js" />
-        <link rel="stylesheet" href="${baseURL}/dist/styles.css" />
       </body>
   </html>`;
 }
@@ -66,6 +67,19 @@ if (dev) {
     return serveStatic({ root: `./dist/${service.name}`, path: filePath })(c, n);
   });
 }
+// Serve any file under ./public at `${baseURL}/*` with SSR fallback when not found
+app.get(`${baseURL}/*`, async (c: Context, n) => {
+  const publicPath = c.req.path.replace(`${baseURL}/`, "");
+  try {
+    const stat = await Deno.stat(`./public/${publicPath}`);
+    if (stat.isFile) {
+      return serveStatic({ root: `./public`, path: publicPath })(c, n);
+    }
+  } catch (_err) {
+    // Not found; fall through to SSR handler
+  }
+  return n();
+});
 app.get(`${baseURL}/*`, (c: Context) => {
   const { search } = new URL(c.req.url);
   const lang = c.get("language");

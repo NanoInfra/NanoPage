@@ -8,7 +8,7 @@
   "imports": {
     "@/": "./",
 
-    "@unhead/react": "npm:@unhead/react@^2.0.14",
+    "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.5",
 
     "hono": "npm:hono",
 

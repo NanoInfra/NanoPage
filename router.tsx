@@ -1,9 +1,9 @@
 import { Router } from "wouter";
 import { I18nProvider } from "./hooks/i18n.tsx";
-import { MyPage } from "./pages/page.tsx";
+import Index from "./pages/index.tsx";
 import { baseURL } from "./service.ts";
 import { QueryProvider } from "./components/providers/query-provider.tsx";
-import { UnheadProvider } from "./components/providers/unhead-provider.tsx";
+import { HelmetProvider } from "react-helmet-async";
 
 export default function ({
   ssrPath,
@@ -15,14 +15,14 @@ export default function ({
   lang?: string;
 }) {
   return (
-    <UnheadProvider>
+    <HelmetProvider>
       <QueryProvider>
         <I18nProvider lang={lang}>
           <Router ssrPath={ssrPath} ssrSearch={ssrSearch} base={baseURL}>
-            <MyPage />
+            <Index />
           </Router>
         </I18nProvider>
       </QueryProvider>
-    </UnheadProvider>
+    </HelmetProvider>
   );
 }
