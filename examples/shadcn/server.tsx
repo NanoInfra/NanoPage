@@ -21,7 +21,7 @@ server.app.get(`${baseURL}/*`, async (c) => {
   const { search } = new URL(c.req.url);
   const lang = c.get("language");
   const body = renderAppToString(
-    <AppRouter ssrPath={c.req.path} ssrSearch={search} lang={lang} />,
+    <AppRouter ssrPath={c.req.path} ssrSearch={search} lang={lang} baseURL={baseURL} />,
   );
   const html = await server.renderPage({
     title: c.req.path,

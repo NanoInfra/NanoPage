@@ -9,6 +9,7 @@ if (globalThis.document) {
       ssrPath={globalThis.SSR_PATH || globalThis.location.pathname}
       ssrSearch={globalThis.SSR_SEARCH || globalThis.location.search}
       lang={globalThis.SSR_LANG || "en"}
+      baseURL={globalThis.BASE_URL}
     />,
   );
 }
