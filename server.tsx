@@ -27,7 +27,7 @@ interface TemplateData {
 let cachedTemplate: string | null = null;
 async function readTemplate(): Promise<string> {
   if (cachedTemplate) return cachedTemplate;
-  const file = await Deno.readTextFile(new URL("./index.html", import.meta.url));
+  const file = await Deno.readTextFile(new URL("./index.mustache", import.meta.url));
   cachedTemplate = file;
   return file;
 }
