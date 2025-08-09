@@ -3,7 +3,7 @@ import { Hono } from "npm:hono";
 import { languageDetector } from "npm:hono/language";
 import type { DetectorOptions } from "npm:hono/language";
 import { serveStatic } from "npm:hono/deno";
-import { renderToString } from "react-dom/server";
+import { renderToString } from "https://esm.sh/react-dom@19.1.1/server";
 import Mustache from "https://esm.sh/mustache@4.2.0";
 
 export type I18nOptions = Partial<DetectorOptions>;

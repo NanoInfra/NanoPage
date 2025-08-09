@@ -1,4 +1,4 @@
-import { Command } from "@cliffy/command";
+import { Command } from "jsr:@cliffy/command@^1.0.0-rc.8";
 import { runDevCommand } from "./commands/dev.ts";
 import { findNearestProjectRoot } from "./utils.ts";
 

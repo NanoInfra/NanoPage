@@ -1,0 +1,10 @@
+{
+  "name": "shadcn",
+  "jwt_check": false,
+  "permissions": {
+    "read": [],
+    "write": [],
+    "env": [],
+    "run": []
+  }
+}
