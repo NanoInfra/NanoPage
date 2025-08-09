@@ -882,6 +882,8 @@
     "https://esm.sh/motion@12.23.12/denonext/react.mjs": "b8feabafb75a730a8d059789d9b3f807b392c6197ead31eb3e355aa74a66ba4d",
     "https://esm.sh/motion@12.23.12/react": "63f1746a36f562dbf94fce974258c2963f9494ccaeed5f8d563cf9e21ba0c96e",
     "https://esm.sh/motion@12.23.12/react-client": "20dcab7fcdefe89dd58b0bebd1c6942346316e41ccccfc1f7e6df27b400b013b",
+    "https://esm.sh/mustache@4.2.0": "59e481b3b41049a1b6e0806c3c58d9df6ef9da4195a6a8b52bcdab13fb616de3",
+    "https://esm.sh/mustache@4.2.0/denonext/mustache.mjs": "8a90a398468999468a8e9abb6b93b459b698eed6844ee30c450490363890ba2a",
     "https://esm.sh/next-themes@0.4.6": "bbc86282b4613d027d633775157823b4b63c4c359f03b77d38cda49f052bba38",
     "https://esm.sh/next-themes@0.4.6/denonext/next-themes.mjs": "d75e5170549ccb15d201bf6acaf7377fb15290dd9eb3bc31c5a9e94f5820d16f",
     "https://esm.sh/preact-render-to-string@6.5.13": "879938f0f8518be4d0c93dbe5163c2de466881280a3174361dc93d8e4a1e809b",

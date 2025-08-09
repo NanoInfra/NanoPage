@@ -8,6 +8,8 @@
   "imports": {
     "@/": "./",
 
+    "mustache": "https://esm.sh/mustache@4.2.0",
+
     "hono": "npm:hono",
 
     "react": "https://esm.sh/react",
@@ -78,6 +80,9 @@
   },
   "unstable": ["byonm", "node-globals", "sloppy-imports", "raw-imports"],
   "lint": {
+    "files": {
+      "include": ["**/*.ts", "**/*.tsx"]
+    },
     "rules": {
       "tags": ["recommended"],
       "exclude": ["no-sloppy-imports"]

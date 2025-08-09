@@ -28,6 +28,7 @@ export default function MyPage() {
   const [currentTime, setCurrentTime] = React.useState(new Date());
 
   React.useEffect(() => {
+    console.log("index.tsx");
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);

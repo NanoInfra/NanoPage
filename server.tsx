@@ -4,7 +4,7 @@ import { languageDetector } from "hono/language";
 import { serveStatic } from "hono/deno";
 import inline from "@twind/with-react/inline";
 import tw from "./tw.ts";
-import { prerenderHead } from "./head.tsx";
+import Mustache from "mustache";
 
 // to read local deno.json
 import service, { baseURL } from "./service.ts";
@@ -14,36 +14,27 @@ import AppRouter from "./router.tsx";
 
 const dev = Deno.env.get("DEV") === "true";
 
-interface RenderHTMLProps {
-  reqPath: string;
-  search: string;
+interface TemplateData {
+  title: string;
+  ssrPath: string;
+  ssrSearch: string;
   lang: string;
+  dev: boolean;
   body: string;
-  title?: string;
+  baseURL: string;
 }
 
-export default function RenderHTML(
-  { reqPath, search, lang, body, title }: RenderHTMLProps,
-) {
-  return `
-  <!DOCTYPE html>
-      <html>
-          <head>
-            <title>${title ? title : reqPath}</title>
-            ${prerenderHead()}
-            <script lang="javascript">
-         globalThis.SSR_PATH = "${reqPath}";
-         globalThis.SSR_SEARCH = "${search}";
-         globalThis.SSR_LANG = "${lang}";
-         globalThis.DEV = ${dev};
-        </script>
-      </head>
+let cachedTemplate: string | null = null;
+async function readTemplate(): Promise<string> {
+  if (cachedTemplate) return cachedTemplate;
+  const file = await Deno.readTextFile(new URL("./index.html", import.meta.url));
+  cachedTemplate = file;
+  return file;
+}
 
-      <body>
-        <div id="app">${body}</div>
-        <script type="module" src="${baseURL}/dist/main.js" />
-      </body>
-  </html>`;
+export async function renderHTML(data: TemplateData): Promise<string> {
+  const template = await readTemplate();
+  return Mustache.render(template, data);
 }
 
 if (dev) {
@@ -80,7 +71,7 @@ app.get(`${baseURL}/*`, async (c: Context, n) => {
   }
   return n();
 });
-app.get(`${baseURL}/*`, (c: Context) => {
+app.get(`${baseURL}/*`, async (c: Context) => {
   const { search } = new URL(c.req.url);
   const lang = c.get("language");
 
@@ -89,16 +80,17 @@ app.get(`${baseURL}/*`, (c: Context) => {
     <AppRouter ssrPath={c.req.path} ssrSearch={search} lang={lang} />,
   );
 
-  const styled = inline(
-    RenderHTML({
-      reqPath: c.req.path,
-      search,
-      lang,
-      body,
-    }),
-    tw,
-  );
+  const html = await renderHTML({
+    title: c.req.path,
+    ssrPath: c.req.path,
+    ssrSearch: search,
+    lang,
+    dev,
+    body,
+    baseURL,
+  });
 
+  const styled = inline(html, tw);
   return c.html(styled);
 });
 
