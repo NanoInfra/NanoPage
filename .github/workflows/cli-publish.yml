@@ -1,0 +1,62 @@
+name: Publish CLI
+
+on:
+  push:
+    tags:
+      - 'cli@*'
+
+jobs:
+  publish-cli:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect CLI version from tag
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          if [[ "$TAG" != cli@* ]]; then
+            echo "This workflow only handles cli@ tags" >&2
+            exit 1
+          fi
+          VER="${TAG#cli@}"
+          echo "VERSION=$VER" >> "$GITHUB_ENV"
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Build CLI
+        working-directory: packages/cli
+        shell: bash
+        run: deno task build
+
+      - name: Prepare artifact
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          cp packages/cli/cli.js artifacts/nanopage.js
+
+      - name: Upload workflow artifact (nanopage.js)
+        uses: actions/upload-artifact@v4
+        with:
+          name: nanopage.js
+          path: artifacts/nanopage.js
+
+      - name: Create GitHub Release and upload asset
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: CLI v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+          files: |
+            artifacts/nanopage.js
+

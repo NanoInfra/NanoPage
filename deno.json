@@ -1,15 +1,9 @@
 {
   "tasks": {
-    "dev": "deno run --allow-all ./packages/cli/mod.ts -C ./examples/shadcn"
+    "publish": "deno run --allow-all ./scripts/publish.ts"
   },
   "imports": {
-    "@cliffy/command": "jsr:@cliffy/command@^1.0.0-rc.8",
-    "react": "https://esm.sh/react@19.1.1",
-    "react-dom/server": "https://esm.sh/react-dom@19.1.1/server"
-  },
-  "lint": {
-    "rules": {
-      "tags": ["recommended"]
-    }
+    "@cliffy/prompt": "jsr:@cliffy/prompt@^1.0.0-rc.8",
+    "@std/assert": "jsr:@std/assert@1"
   }
 }
