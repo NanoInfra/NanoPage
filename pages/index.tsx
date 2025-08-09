@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Helmet } from "react-helmet-async";
 
 const Container = (
   { children, left, ...props }: React.HTMLAttributes<HTMLDivElement> & {
@@ -37,10 +36,6 @@ export default function MyPage() {
   }, []);
   return (
     <Container left={<div>Left Content</div>}>
-      <Helmet>
-        <title>NanoPage</title>
-        <meta name="description" content="NanoPage demo" />
-      </Helmet>
       <h1>Hello, World!</h1>
       <p>Current time: {currentTime.toLocaleTimeString()}</p>
     </Container>
