@@ -2,6 +2,7 @@
   "version": "5",
   "specifiers": {
     "npm:@types/node@*": "22.15.15",
+    "npm:@unhead/react@^2.0.14": "2.0.14_react@19.1.1",
     "npm:hono@*": "4.8.5"
   },
   "npm": {
@@ -11,11 +12,30 @@
         "undici-types"
       ]
     },
+    "@unhead/react@2.0.14_react@19.1.1": {
+      "integrity": "sha512-LHIhXyJUztRO5kFAXO4SG3RB0a/Uz3zMrX/LHo0Wp2z0KQ4jXq2dLSpM3Jxjrjm5eLO4tTvOGhU65EBgj/4ZFg==",
+      "dependencies": [
+        "react",
+        "unhead"
+      ]
+    },
     "hono@4.8.5": {
       "integrity": "sha512-Up2cQbtNz1s111qpnnECdTGqSIUIhZJMLikdKkshebQSEBcoUKq6XJayLGqSZWidiH0zfHRCJqFu062Mz5UuRA=="
     },
+    "hookable@5.5.3": {
+      "integrity": "sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ=="
+    },
+    "react@19.1.1": {
+      "integrity": "sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ=="
+    },
     "undici-types@6.21.0": {
       "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+    },
+    "unhead@2.0.14": {
+      "integrity": "sha512-dRP6OCqtShhMVZQe1F4wdt/WsYl2MskxKK+cvfSo0lQnrPJ4oAUQEkxRg7pPP+vJENabhlir31HwAyHUv7wfMg==",
+      "dependencies": [
+        "hookable"
+      ]
     }
   },
   "redirects": {
@@ -1014,6 +1034,7 @@
   },
   "workspace": {
     "dependencies": [
+      "npm:@unhead/react@^2.0.14",
       "npm:hono@*"
     ]
   }

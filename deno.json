@@ -8,6 +8,8 @@
   "imports": {
     "@/": "./",
 
+    "@unhead/react": "npm:@unhead/react@^2.0.14",
+
     "hono": "npm:hono",
 
     "react": "https://esm.sh/react",
