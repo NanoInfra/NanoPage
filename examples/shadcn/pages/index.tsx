@@ -18,7 +18,7 @@ const Container = (
         <div className="flex-1 bg-primary">{children}</div>
       </div>
       <Button variant="default">
-        fuck
+        ok
       </Button>
     </div>
   );

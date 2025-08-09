@@ -6,6 +6,8 @@
     "jsr:@cliffy/internal@1.0.0-rc.8": "1.0.0-rc.8",
     "jsr:@cliffy/table@1.0.0-rc.8": "1.0.0-rc.8",
     "jsr:@std/fmt@~1.0.2": "1.0.8",
+    "jsr:@std/internal@^1.0.9": "1.0.10",
+    "jsr:@std/path@*": "1.1.1",
     "jsr:@std/text@~1.0.7": "1.0.15",
     "npm:@types/node@*": "22.15.15",
     "npm:hono@*": "4.9.0"
@@ -38,6 +40,15 @@
     },
     "@std/fmt@1.0.8": {
       "integrity": "71e1fc498787e4434d213647a6e43e794af4fd393ef8f52062246e06f7e372b7"
+    },
+    "@std/internal@1.0.10": {
+      "integrity": "e3be62ce42cab0e177c27698e5d9800122f67b766a0bea6ca4867886cbde8cf7"
+    },
+    "@std/path@1.1.1": {
+      "integrity": "fe00026bd3a7e6a27f73709b83c607798be40e20c81dde655ce34052fd82ec76",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
     },
     "@std/text@1.0.15": {
       "integrity": "91f5cc1e12779a3d95f1be34e763f9c28a75a078b7360e6fcaef0d8d9b1e3e7f"

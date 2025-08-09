@@ -1,5 +1,5 @@
 {
-  "name": "TEMPLATE",
+  "name": "shadcn",
   "jwt_check": false,
   "permissions": {
     "read": [],

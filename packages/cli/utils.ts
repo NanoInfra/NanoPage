@@ -30,3 +30,15 @@ export async function readServiceConfig(
   if (!parsed.name) throw new Error("Missing 'name' in service.json");
   return parsed;
 }
+
+// Debounce helper for clarity
+export const debounce = (fn: () => void | Promise<void>, delay = 150) => {
+  let timer: number | undefined;
+  return () => {
+    if (timer) globalThis.clearTimeout(timer);
+    timer = globalThis.setTimeout(async () => {
+      await fn();
+      timer = undefined;
+    }, delay) as unknown as number;
+  };
+};
