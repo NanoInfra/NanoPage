@@ -3,19 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ baseURL }}/styles.css" />
+    <title>{{{ title }}}</title>
+    <link rel="stylesheet" href="{{{ baseURL }}}/styles.css" />
     <script lang="javascript">
-      globalThis.SSR_PATH = "{{ ssrPath }}";
-      globalThis.SSR_SEARCH = "{{ ssrSearch }}";
-      globalThis.SSR_LANG = "{{ lang }}";
+      globalThis.SSR_PATH = "{{{ ssrPath }}}";
+      globalThis.SSR_SEARCH = "{{{ ssrSearch }}}";
+      globalThis.SSR_LANG = "{{{ lang }}}";
       globalThis.DEV = {{ dev }};
     </script>
   </head>
   <body>
     <div id="app">{{{ body }}}</div>
-    <script type="module" src="{{ baseURL }}/dist/main.js"></script>
+    <script type="module" src="{{{ baseURL }}}/dist/main.js"></script>
   </body>
 </html>
-
-

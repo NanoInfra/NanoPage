@@ -14,6 +14,11 @@ export async function runDevCommand(projectRootArg?: string) {
   const clientCommand = new Deno.Command("deno", {
     args: [
       "bundle",
+      "--config",
+      new URL(
+        "./deno.json",
+        `file://${projectRoot.endsWith("/") ? projectRoot : projectRoot + "/"}`,
+      ).pathname,
       "--watch",
       "./client.tsx",
       "-o",
@@ -26,7 +31,11 @@ export async function runDevCommand(projectRootArg?: string) {
   });
 
   const serverCommand = new Deno.Command("deno", {
-    args: ["run", "--allow-all", "--watch", "./server.tsx"],
+    args: [
+      "run",
+      "--allow-all",
+      "./server.tsx",
+    ],
     cwd: projectRoot,
     stdin: "inherit",
     stdout: "inherit",
@@ -41,10 +50,7 @@ export async function runDevCommand(projectRootArg?: string) {
   const clientProcess = clientCommand.spawn();
   const serverProcess = serverCommand.spawn();
 
-  console.log(
-    `Your app is running on http://localhost:${port}/api/v2/${service.name}`,
-  );
-
+  // Forward signals to children and exit cleanly
   const shutdown = () => {
     try {
       serverProcess.kill("SIGTERM");
@@ -58,9 +64,23 @@ export async function runDevCommand(projectRootArg?: string) {
     }
   };
 
-  Deno.addSignalListener("SIGINT", shutdown);
-  Deno.addSignalListener("SIGTERM", shutdown);
+  const onSigint = () => {
+    shutdown();
+    Deno.exit(130);
+  };
+  const onSigterm = () => {
+    shutdown();
+    Deno.exit(143);
+  };
+
+  Deno.addSignalListener("SIGINT", onSigint);
+  Deno.addSignalListener("SIGTERM", onSigterm);
+
+  console.log(
+    `Your app is running on http://localhost:${port}/api/v2/${service.name}`,
+  );
 
   await Promise.race([serverProcess.status, clientProcess.status]);
-  shutdown();
+  // One child exited unexpectedly; propagate shutdown
+  onSigterm();
 }

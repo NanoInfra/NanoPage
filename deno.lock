@@ -6,7 +6,9 @@
     "jsr:@cliffy/internal@1.0.0-rc.8": "1.0.0-rc.8",
     "jsr:@cliffy/table@1.0.0-rc.8": "1.0.0-rc.8",
     "jsr:@std/fmt@~1.0.2": "1.0.8",
-    "jsr:@std/text@~1.0.7": "1.0.15"
+    "jsr:@std/text@~1.0.7": "1.0.15",
+    "npm:@types/node@*": "22.15.15",
+    "npm:hono@*": "4.9.0"
   },
   "jsr": {
     "@cliffy/command@1.0.0-rc.8": {
@@ -40,6 +42,50 @@
     "@std/text@1.0.15": {
       "integrity": "91f5cc1e12779a3d95f1be34e763f9c28a75a078b7360e6fcaef0d8d9b1e3e7f"
     }
+  },
+  "npm": {
+    "@types/node@22.15.15": {
+      "integrity": "sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
+    "hono@4.9.0": {
+      "integrity": "sha512-JAUc4Sqi3lhby2imRL/67LMcJFKiCu7ZKghM7iwvltVZzxEC5bVJCsAa4NTnSfmWGb+N2eOVtFE586R+K3fejA=="
+    },
+    "undici-types@6.21.0": {
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+    }
+  },
+  "redirects": {
+    "https://esm.sh/@twind/core@^1.1.0?target=denonext": "https://esm.sh/@twind/core@1.1.3?target=denonext",
+    "https://esm.sh/@twind/with-react": "https://esm.sh/@twind/with-react@1.1.3",
+    "https://esm.sh/@twind/with-react/inline": "https://esm.sh/@twind/with-react@1.1.3/inline",
+    "https://esm.sh/@types/mustache@~4.2.5/index.d.mts": "https://esm.sh/@types/mustache@4.2.6/index.d.mts",
+    "https://esm.sh/@types/react-dom@~19.1.6/index.d.ts": "https://esm.sh/@types/react-dom@19.1.7/index.d.ts",
+    "https://esm.sh/@types/react-dom@~19.1.6/server.d.ts": "https://esm.sh/@types/react-dom@19.1.7/server.d.ts",
+    "https://esm.sh/@types/react@~19.1.8/index.d.ts": "https://esm.sh/@types/react@19.1.9/index.d.ts",
+    "https://esm.sh/react": "https://esm.sh/react@19.1.1",
+    "https://esm.sh/react-dom": "https://esm.sh/react-dom@19.1.1",
+    "https://esm.sh/react-dom/server": "https://esm.sh/react-dom@19.1.1/server"
+  },
+  "remote": {
+    "https://esm.sh/@twind/core@1.1.3/denonext/core.mjs": "39005f461379ef3ae69a2147083b793354a0867cc6fb926052c8af29ec84d20a",
+    "https://esm.sh/@twind/core@1.1.3?target=denonext": "9bcaf0c427f0a27f9203aa1ac0b5db3422c6b02b53906c603c8a7ded90662e76",
+    "https://esm.sh/@twind/with-react@1.1.3": "81d155df5841e868c8c19a7c2ea867cd9796908a89ad361ef925a1eaeb358173",
+    "https://esm.sh/@twind/with-react@1.1.3/denonext/inline.mjs": "cec2b0bbb9de59fd1abf0f47407d7facbd8cdd23a0fb3f7c0cc62f90e8036416",
+    "https://esm.sh/@twind/with-react@1.1.3/denonext/with-react.mjs": "f62940b036a636ae16706fac3e0cd3d471b00e7e7d754ccc8d90edd552eabce3",
+    "https://esm.sh/@twind/with-react@1.1.3/inline": "12036a8c97112b8d373e933f7273c56ccd81d1a03dd1508a0cdc489260cf445c",
+    "https://esm.sh/mustache@4.2.0": "59e481b3b41049a1b6e0806c3c58d9df6ef9da4195a6a8b52bcdab13fb616de3",
+    "https://esm.sh/mustache@4.2.0/denonext/mustache.mjs": "8a90a398468999468a8e9abb6b93b459b698eed6844ee30c450490363890ba2a",
+    "https://esm.sh/react-dom@19.1.1": "231e09cb6c839fdd7ed9c46b994c748c9a0f5c1c702d5a9c0205ad60979437ee",
+    "https://esm.sh/react-dom@19.1.1/denonext/cjs/react-dom-server-legacy.browser.production.mjs": "46093e4d958c744635246158bbe9d1448c1168acc16ee248a1cb744c0194cc72",
+    "https://esm.sh/react-dom@19.1.1/denonext/cjs/react-dom-server.browser.production.mjs": "1b65edfd064bcb0377f63e6d3d15176967ead3acd6b3aec869bd194e48522676",
+    "https://esm.sh/react-dom@19.1.1/denonext/react-dom.mjs": "a31239e9832b73257ff344fb3d8292982ee25cbc1da5edab9ba81648c30f4abd",
+    "https://esm.sh/react-dom@19.1.1/denonext/server.mjs": "513c3f84f3402259c315ae6788c2dd9e671e8dc2adfa2f37d51165e156b4932f",
+    "https://esm.sh/react-dom@19.1.1/server": "d8d537b44c19a05a7805396eac77f18c628e1019fb2a61cb1f1a1bce0eeeb939",
+    "https://esm.sh/react@19.1.1": "4583aedf2a721df5ea4aa7308de82b5bcbee12e5ed7910061940f7434982847d",
+    "https://esm.sh/react@19.1.1/denonext/react.mjs": "588ff2562af9e974efdb79cc945049768bf5ee0252543fd8fb6a48472f3db587"
   },
   "workspace": {
     "dependencies": [

@@ -6,15 +6,16 @@
   },
   "imports": {
     "@/": "./",
+    "nanopage/server": "../../packages/cli/server-helpers.ts",
 
     "mustache": "https://esm.sh/mustache@4.2.0",
 
     "hono": "npm:hono",
 
-    "react": "https://esm.sh/react",
-    "react/": "https://esm.sh/react/",
-    "react-dom": "https://esm.sh/react-dom",
-    "react-dom/": "https://esm.sh/react-dom/",
+    "react": "https://esm.sh/react@19.1.1",
+    "react/": "https://esm.sh/react@19.1.1/",
+    "react-dom": "https://esm.sh/react-dom@19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@19.1.1/",
 
     "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@5.59.16",
     "@tanstack/react-query-devtools": "https://esm.sh/@tanstack/react-query-devtools@5.59.16",
