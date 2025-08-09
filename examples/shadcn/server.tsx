@@ -94,6 +94,7 @@ app.get(`${baseURL}/*`, async (c: Context) => {
   return c.html(styled);
 });
 
-Deno.serve(
-  app.fetch,
-);
+Deno.serve({
+  port: Deno.env.get("PORT") ? Number(Deno.env.get("PORT")) : 8787,
+  handler: app.fetch,
+});

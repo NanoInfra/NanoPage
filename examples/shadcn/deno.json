@@ -2,8 +2,7 @@
   "name": "TEMPLATE",
   "exports": "./page.tsx",
   "tasks": {
-    "dev:client": "deno run --allow-all ./scripts/dev-client.ts",
-    "dev:server": "deno run --allow-all ./scripts/dev-server.ts"
+    "dev": "deno run --allow-all ./scripts/dev.ts"
   },
   "imports": {
     "@/": "./",
