@@ -2,11 +2,11 @@
   "name": "TEMPLATE",
   "exports": "./page.tsx",
   "tasks": {
-    "dev": "deno run --allow-all https://raw.githubusercontent.com/NanoInfra/NanoPage/refs/tags/cli%400.0.3/packages/cli/mod.ts"
+    "dev": "deno run --allow-all https://raw.githubusercontent.com/NanoInfra/NanoPage/refs/tags/cli%400.0.4/packages/cli/mod.ts"
   },
   "imports": {
     "@/": "./",
-    "nanopage/server": "https://raw.githubusercontent.com/NanoInfra/NanoPage/refs/tags/cli%400.0.3/packages/cli/server.ts",
+    "nanopage/server": "https://raw.githubusercontent.com/NanoInfra/NanoPage/refs/tags/cli%400.0.4/packages/cli/server.ts",
 
     "mustache": "https://esm.sh/mustache@4.2.0",
 

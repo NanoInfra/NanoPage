@@ -1159,7 +1159,8 @@
     "https://esm.sh/zod@4.0.15": "8f5356676080c7a672885f52568fca659af069a035dce2c7e8a5c2e7df53a25a",
     "https://esm.sh/zod@4.0.15/denonext/v4/core.mjs": "215316dacca916a8c26e03ac295e418a961ace1501180a4fb4fc977e6cac8365",
     "https://esm.sh/zod@4.0.15/denonext/v4/locales.mjs": "7c290af70dfe5b863e91420da541af99e2303b06e2e1c03da57471c725e0c31f",
-    "https://esm.sh/zod@4.0.15/denonext/zod.mjs": "98cef985c5ce0b18ea1696a3396b32835217e422b02e4da1da8ed75222e30ee3"
+    "https://esm.sh/zod@4.0.15/denonext/zod.mjs": "98cef985c5ce0b18ea1696a3396b32835217e422b02e4da1da8ed75222e30ee3",
+    "https://raw.githubusercontent.com/NanoInfra/NanoPage/refs/tags/cli%400.0.4/packages/cli/server.ts": "fa54180b4ea97a601598606830747f70faf49fb0e38b44c231e2877bbf71e441"
   },
   "workspace": {
     "dependencies": [
