@@ -6,6 +6,8 @@ import { serveStatic } from "npm:hono/deno";
 import { renderToString } from "react-dom/server";
 import Mustache from "https://esm.sh/mustache@4.2.0";
 
+export type I18nOptions = Partial<DetectorOptions>;
+
 export interface TemplateData {
   title: string;
   ssrPath: string;
@@ -17,7 +19,7 @@ export interface TemplateData {
 }
 
 export async function readService(
-  projectRoot: string,
+  projectRoot = Deno.cwd(),
 ): Promise<{ service: { name: string }; baseURL: string }> {
   const json = await Deno.readTextFile(`${projectRoot}/service.json`);
   const service = JSON.parse(json) as { name: string };
@@ -96,3 +98,64 @@ export function startServer(
 }
 
 export { Hono };
+
+// High-level createServer API
+export interface CreateServerOptions {
+  projectRoot?: string;
+  baseURL: string;
+  serviceName: string;
+  dev?: boolean;
+  port?: number;
+  i18n?: Partial<DetectorOptions>;
+  transformHTML?: (html: string) => Promise<string> | string;
+}
+
+export function createServer(options: CreateServerOptions) {
+  const {
+    projectRoot = Deno.cwd(),
+    baseURL,
+    serviceName,
+    dev = Deno.env.get("DEV") === "true",
+    port = Deno.env.get("PORT") ? Number(Deno.env.get("PORT")) : 8787,
+    i18n,
+    transformHTML,
+  } = options;
+
+  const app = new Hono();
+
+  // i18n
+  app.use(createI18nMiddleware(i18n));
+
+  // static & dist
+  serveDistInDev(app, baseURL, serviceName, projectRoot, dev);
+  servePublic(app, baseURL, projectRoot);
+
+  async function renderPage(params: {
+    title?: string;
+    ssrPath: string;
+    ssrSearch: string;
+    lang: string;
+    body: string;
+  }): Promise<string> {
+    const template = await readTemplate(projectRoot);
+    const html = renderTemplate(template, {
+      title: params.title ?? params.ssrPath,
+      ssrPath: params.ssrPath,
+      ssrSearch: params.ssrSearch,
+      lang: params.lang,
+      dev,
+      body: params.body,
+      baseURL,
+    });
+    const finalHtml = transformHTML
+      ? await Promise.resolve(transformHTML(html))
+      : html;
+    return finalHtml;
+  }
+
+  function start() {
+    return Deno.serve({ port, handler: app.fetch });
+  }
+
+  return { app, renderPage, start };
+}

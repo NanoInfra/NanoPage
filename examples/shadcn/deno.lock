@@ -77,6 +77,7 @@
     "https://esm.sh/@types/mustache@~4.2.5/index.d.mts": "https://esm.sh/@types/mustache@4.2.6/index.d.mts",
     "https://esm.sh/@types/prop-types@~15.7.14/index.d.ts": "https://esm.sh/@types/prop-types@15.7.15/index.d.ts",
     "https://esm.sh/@types/react-dom@~19.1.6/index.d.ts": "https://esm.sh/@types/react-dom@19.1.7/index.d.ts",
+    "https://esm.sh/@types/react-dom@~19.1.6/server.d.ts": "https://esm.sh/@types/react-dom@19.1.7/server.d.ts",
     "https://esm.sh/@types/react-is@~18.3.1/index.d.ts": "https://esm.sh/@types/react-is@18.3.1/index.d.ts",
     "https://esm.sh/@types/react-transition-group@~4.4.12/index.d.ts": "https://esm.sh/@types/react-transition-group@4.4.12/index.d.ts",
     "https://esm.sh/@types/react@~19.0.7/index.d.ts": "https://esm.sh/@types/react@19.0.14/index.d.ts",
