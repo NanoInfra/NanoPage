@@ -2,7 +2,9 @@ export interface ServiceConfig {
   name: string;
 }
 
-export async function findNearestProjectRoot(startDirectory: string): Promise<string> {
+export async function findNearestProjectRoot(
+  startDirectory: string,
+): Promise<string> {
   let currentDirectory = startDirectory;
   while (true) {
     try {
@@ -19,12 +21,12 @@ export async function findNearestProjectRoot(startDirectory: string): Promise<st
   }
 }
 
-export async function readServiceConfig(projectRoot: string): Promise<ServiceConfig> {
+export async function readServiceConfig(
+  projectRoot: string,
+): Promise<ServiceConfig> {
   const serviceConfigPath = `${projectRoot}/service.json`;
   const jsonText = await Deno.readTextFile(serviceConfigPath);
   const parsed = JSON.parse(jsonText) as ServiceConfig;
   if (!parsed.name) throw new Error("Missing 'name' in service.json");
   return parsed;
 }
-
-

@@ -10,20 +10,20 @@ const i18n: I18nOptions = {
 
 const dev = Deno.env.get("DEV") === "true";
 const { service, baseURL } = await readService();
-const server = createServer({
+const { app, renderPage, start } = createServer({
   baseURL,
   serviceName: service.name,
   dev,
   i18n,
 });
 
-server.app.get(`${baseURL}/*`, async (c) => {
+app.get(`${baseURL}/*`, async (c) => {
   const { search } = new URL(c.req.url);
   const lang = c.get("language");
   const body = renderAppToString(
     <AppRouter ssrPath={c.req.path} ssrSearch={search} lang={lang} baseURL={baseURL} />,
   );
-  const html = await server.renderPage({
+  const html = await renderPage({
     title: c.req.path,
     ssrPath: c.req.path,
     ssrSearch: search,
@@ -34,4 +34,4 @@ server.app.get(`${baseURL}/*`, async (c) => {
   return c.html(styled);
 });
 
-server.start();
+start();

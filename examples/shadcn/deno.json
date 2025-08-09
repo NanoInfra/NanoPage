@@ -6,7 +6,7 @@
   },
   "imports": {
     "@/": "./",
-    "nanopage/server": "../../packages/cli/server-helpers.ts",
+    "nanopage/server": "../../packages/cli/server.ts",
 
     "mustache": "https://esm.sh/mustache@4.2.0",
 
