@@ -7,14 +7,12 @@ import {
 import * as path from "jsr:@std/path";
 
 function startClient(projectRoot: string, service: ServiceConfig) {
+  const configPath = path.join(projectRoot, "deno.json");
   return new Deno.Command("deno", {
     args: [
       "bundle",
       "--config",
-      new URL(
-        "./deno.json",
-        `file://${projectRoot.endsWith("/") ? projectRoot : projectRoot + "/"}`,
-      ).pathname,
+      configPath,
       "--watch",
       "./client.tsx",
       "-o",

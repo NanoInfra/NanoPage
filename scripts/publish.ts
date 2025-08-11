@@ -15,3 +15,6 @@ const version = await Input.prompt({
 
 $`git tag ${packageName}@${version}`;
 console.log("tag created");
+
+// push the tag to the remote repository, let CD run the publish
+$`git push origin --tags ${packageName}@${version}`;
