@@ -78,7 +78,9 @@ export async function runDevCommand(projectRootArg?: string) {
     Deno.exit(143);
   };
   Deno.addSignalListener("SIGINT", onSigint);
-  Deno.addSignalListener("SIGTERM", onSigterm);
+
+  // TODO: WINDOWS PATCH
+  // Deno.addSignalListener("SIGTERM", onSigterm);
 
   // Files to watch for server restart
   const watchFiles = [
